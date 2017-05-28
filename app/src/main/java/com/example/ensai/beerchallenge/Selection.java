@@ -28,16 +28,6 @@ import java.util.ArrayList;
 public class Selection extends AppCompatActivity {
 
     ListView lv ;
-    private static ArrayList<Biere> listeDesBieresSelectionnees;
-
-    public  static String Non_BIERE="Non_BIERE";
-    public  static String Non_COULEUR="Non_COULEUR";
-    public  static String Non_FERMENTATION="Non_FERMENTATION";
-    public  static String Non_DEGRE="Non_DEGRE";
-    public static String Non_TYPE="Non_TYPE";
-    public  static String Non_BRASSERIE="Non_BRASSERIE";
-    public  static String Non_ID="Non_id";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +61,7 @@ public class Selection extends AppCompatActivity {
                }
 
                public void onResponse(Response response) throws IOException {
-                   final ArrayList<Biere> listeBieres=new ArrayList<Biere>();
+                  final ArrayList<Biere> listeBieres=new ArrayList<Biere>();
 
 
                    try {
@@ -83,11 +73,6 @@ public class Selection extends AppCompatActivity {
                            Biere biere = new Biere();
                            biere.setId(jsonobject.getInt("id_biere"));
                            biere.setNom(jsonobject.getString("nom"));
-                           biere.setBrasserie(jsonobject.getString("nom_brasserie"));
-                           biere.setCouleur(jsonobject.getString("libelle_couleur"));
-                           biere.setDegre_alcool(jsonobject.getDouble("degre_alcool"));
-                           biere.setFermentation(jsonobject.getString("libelle_fermentation"));
-                           biere.setType(jsonobject.getString("libelle_type"));
                            listeBieres.add(biere);
                        }
                    } catch (JSONException exc) {
@@ -114,37 +99,18 @@ public class Selection extends AppCompatActivity {
 
                                    for(Biere b: listeBieres){
                                        if (b.getNom()==value){
-                                           String idString= String.valueOf(b.getId());
                                            Intent i1 = new Intent(v.getContext(), FicheBiere.class);
-                                           i1.putExtra("Non_ID", b.getId());
-//                                           i1.putExtra(Non_BIERE, b.getNom());
-//                                           i1.putExtra(Non_COULEUR, b.getCouleur());
-//                                           i1.putExtra(Non_FERMENTATION, b.getFermentation());
-//                                           i1.putExtra(Non_DEGRE, b.getDegre_alcool().toString());
-//                                           i1.putExtra(Non_TYPE, b.getType());
-//                                           i1.putExtra(Non_BRASSERIE, b.getBrasserie());
+                                           i1.putExtra("IDBiere", b.getId());
                                            startActivityForResult(i1, 6);
                                        };
                                    }
-
-
-
-//                                   Log.i("Getparent", getParent().toString());
-
                                }
                            });
                        }
                    });
                    // fin runOnUiThread
-                   listeDesBieresSelectionnees=listeBieres;
                }
            }
         );
     }
-
-    public ArrayList<Biere> getListeDesBieresSelectionnees(){
-        return listeDesBieresSelectionnees;
-    }
-
-
 }

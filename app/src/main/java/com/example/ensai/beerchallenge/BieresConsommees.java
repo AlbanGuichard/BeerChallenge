@@ -1,8 +1,11 @@
 package com.example.ensai.beerchallenge;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -68,14 +71,9 @@ public class BieresConsommees extends Activity {
                                                                    for (int i = 0; i < json.length(); i++) {
 
                                                                        JSONObject jsonobject = json.getJSONObject(i);
-                                                                        Biere biere = new Biere();
+                                                                       Biere biere = new Biere();
                                                                        biere.setId(jsonobject.getInt("id_biere"));
                                                                        biere.setNom(jsonobject.getString("nom"));
-                                                                       biere.setBrasserie(jsonobject.getString("nom_brasserie"));
-                                                                       biere.setCouleur(jsonobject.getString("libelle_couleur"));
-                                                                       biere.setDegre_alcool(jsonobject.getDouble("degre_alcool"));
-                                                                       biere.setFermentation(jsonobject.getString("libelle_fermentation"));
-                                                                       biere.setType(jsonobject.getString("libelle_type"));
 
                                                                        listeBieres.add(biere);
 
@@ -94,6 +92,26 @@ public class BieresConsommees extends Activity {
                                                                        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(BieresConsommees.this,
                                                                                android.R.layout.simple_list_item_1, listeNomDesBieres);
                                                                        lv.setAdapter(adapter);
+
+                                                                       lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                                                                       {
+                                                                           @Override
+                                                                           public void onItemClick(AdapterView<?> adapter, View v, int position,
+                                                                                                   long arg3)
+                                                                           {
+
+                                                                               String value = (String)adapter.getItemAtPosition(position);
+
+                                                                               for(Biere b: listeBieres){
+                                                                                   if (b.getNom()==value){
+                                                                                       Intent i1 = new Intent(v.getContext(), FicheBiere.class);
+                                                                                       i1.putExtra("IDBiere", b.getId());
+                                                                                       startActivityForResult(i1, 6);
+                                                                                   };
+                                                                               }
+                                                                           }
+                                                                       });
+
                                                                    }
                                                                }); // fin runOnUiThread
                                                            }
@@ -101,7 +119,5 @@ public class BieresConsommees extends Activity {
             );
         }
     }
-
-
 
 }
