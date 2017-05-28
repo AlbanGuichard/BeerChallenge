@@ -15,61 +15,125 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="25dp">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_width="300dip"
+            android:layout_height="100dip" >
+
+            <TextView
+                android:text=" BEER"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/activity_horizontal_margin"
+                android:layout_width="150dip"
+                android:layout_height="50dip"
+                android:id="@+id/t"
+                android:layout_alignStart="@+id/buttonRecherche" /> <!--android:layout_alignBaseline="@+id/buttonChallenge"-->
+            <!--android:layout_alignBottom="@+id/buttonChallenge"-->
+
+            <TextView
+                android:text="Challenge"
+                android:textStyle="bold"
+                android:layout_width="150dip"
+                android:layout_height="50dip"
+                android:id="@+id/t2"
+                android:layout_alignStart="@+id/buttonRecherche" /> <!--android:layout_alignBaseline="@+id/buttonChallenge"-->
+            <!--android:layout_alignBottom="@+id/buttonChallenge"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="400dip"
+            android:layout_height="400dip" >
 
             <Button
                 android:text="@string/buttonCatalogueBieres"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="175dip"
+                android:layout_height="175dip"
                 android:id="@+id/ButtonBieresConsommees"
                 android:onClick="clickButtonCatalogue"
-                android:layout_alignBaseline="@+id/buttonToutesLesBieres"
-                android:layout_alignBottom="@+id/buttonToutesLesBieres"
+                android:layout_alignBaseline="@+id/buttonChallenge" android:layout_alignBottom="@+id/buttonChallenge"
                 android:layout_alignStart="@+id/buttonRecherche" />
+            <Button
+                android:text="@string/buttonChallenge"
+                android:layout_width="175dip"
+                android:layout_height="175dip"
+                android:id="@+id/buttonChallenge"
+                android:layout_alignBaseline="@+id/ButtonBieresConsommees"
+                android:layout_alignBottom="@+id/ButtonBieresConsommees"/>
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_marginTop="27dp"-->
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_width="400dip"
+            android:layout_height="400dip" >
 
             <Button
                 android:text="@string/buttonRecherche"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:textStyle="bold"
+
+
                 android:id="@+id/buttonRecherche"
                 android:onClick="clickButtonRecherche"
-                android:backgroundTint="@android:color/holo_orange_light" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <Button
-                android:text="@string/buttonChallenge"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonChallenge"
-                android:layout_marginTop="27dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:layout_width="175dip"
+                android:layout_height="175dip"/>
+            <!--android:layout_x="120px"-->
+            <!--android:layout_y="120px"-->
             <Button
                 android:text="@string/buttonToutesLesBieres"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="175dip"
+                android:layout_height="175dip"
                 android:id="@+id/buttonToutesLesBieres"
-                android:onClick="clickButtonToutesLesBieres" />
+                android:onClick="clickButtonToutesLesBieres"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/capsule.jpg"-->
         </TableRow>
+
+        <TableRow
+            android:layout_width="400dip"
+            android:layout_height="400dip" >
+
+            <Button
+                android:text="Contact"
+                android:textStyle="bold"
+
+
+                android:id="@+id/buttonContact"
+                android:backgroundTint="@android:color/white"
+                android:layout_width="175dip"
+                android:layout_height="75dip"/>
+
+            <Button
+                android:text="Quitter"
+                android:textStyle="bold"
+
+
+                android:id="@+id/buttonQuitter2"
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:layout_width="175dip"
+                android:layout_height="75dip"/>
+        </TableRow>
+
+        <!--<TableRow-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" >-->
+
+        <!---->
+        <!--</TableRow>-->
+
+        <!--<TableRow-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" >-->
+
+        <!---->
+        <!--</TableRow>-->
     </TableLayout>
 
 

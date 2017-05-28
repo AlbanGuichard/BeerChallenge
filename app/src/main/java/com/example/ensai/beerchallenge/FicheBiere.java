@@ -22,7 +22,7 @@ import java.util.Map;
 public class FicheBiere  extends AppCompatActivity {
 
     public static Biere biere = new Biere();
-    public static int visibility = 0 ;
+    public static int buttonvisibility = 1 ;
     private static Map<Integer, Integer> hmBieresConsommees;
 
     @Override
@@ -39,7 +39,9 @@ public class FicheBiere  extends AppCompatActivity {
         BiereDAO biereDAO = new BiereDAO(db);
         hmBieresConsommees = biereDAO.getBiereConsommees();
 
-
+        if(hmBieresConsommees.containsKey(idBiere)){
+             buttonvisibility = 0 ;
+        }
 
         /* Recherche de la bière dans la base de données */
         String myurl = "http://alban.guichard.free.fr/BeerChallenge/rechercheBiereParID.php?" + "id=" + idBiere;
@@ -93,7 +95,7 @@ public class FicheBiere  extends AppCompatActivity {
                                                                        tv5.setText("Type : "+biere.getType());
 
                                                                        final TextView tv6 = (TextView) findViewById(R.id.BrasserieDeLaBiere);
-                                                                       tv6.setText("Brasseerie : "+biere.getBrasserie());
+                                                                       tv6.setText("Brasserie : "+biere.getBrasserie());
 
 
                                                                    }
