@@ -42,8 +42,7 @@ public class BieresConsommees extends Activity {
         lv = (ListView) findViewById(R.id.listeBieresConsommees);
 
         /* On va chercher les bières consommées par l'utilisateur */
-        SQLiteDatabase db = new BaseDeDonnees(this).getReadableDatabase();
-        BiereDAO biereDAO = new BiereDAO(db);
+        BiereDAO biereDAO = new BiereDAO(BieresConsommees.this);
         hmBieresConsommees = biereDAO.getBiereConsommees();
 
         /* On recupére les informations sur les bières qui sont stockées sur le portable */

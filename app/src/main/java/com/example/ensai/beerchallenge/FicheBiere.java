@@ -1,11 +1,15 @@
 package com.example.ensai.beerchallenge;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -22,8 +26,12 @@ import java.util.Map;
 public class FicheBiere  extends AppCompatActivity {
 
     public static Biere biere = new Biere();
-    public static int buttonvisibility = 1 ;
+    public static int buttonVisibility;
+    public static int ratingVisibility ;
+    public static int idBiere ;
+    public static int voteBiere ;
     private static Map<Integer, Integer> hmBieresConsommees;
+    public static BiereDAO biereDAO ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +40,21 @@ public class FicheBiere  extends AppCompatActivity {
 
         final Intent intent = getIntent();
 
-        int idBiere = intent.getIntExtra("IDBiere",0);
+        idBiere = intent.getIntExtra("IDBiere",0);
 
         /* On regarde si la bière est dans la base de données locale : ie elle a déjà été consommée */
-        SQLiteDatabase db = new BaseDeDonnees(this).getReadableDatabase();
-        BiereDAO biereDAO = new BiereDAO(db);
+        biereDAO = new BiereDAO(FicheBiere.this);
         hmBieresConsommees = biereDAO.getBiereConsommees();
 
+        // 0 = déjà bu la bière 1 = n' pas encore bu la bière
         if(hmBieresConsommees.containsKey(idBiere)){
-             buttonvisibility = 0 ;
+             buttonVisibility = 0 ;
+            ratingVisibility = 1 ;
+            voteBiere = hmBieresConsommees.get(idBiere);
+        }
+        else{
+            buttonVisibility = 1;
+            ratingVisibility = 0 ;
         }
 
         /* Recherche de la bière dans la base de données */
@@ -97,6 +111,29 @@ public class FicheBiere  extends AppCompatActivity {
                                                                        final TextView tv6 = (TextView) findViewById(R.id.BrasserieDeLaBiere);
                                                                        tv6.setText("Brasserie : "+biere.getBrasserie());
 
+                                                                       Button monBouton = (Button) findViewById(R.id.buttonBue);
+                                                                       RatingBar rt = (RatingBar) findViewById(R.id.rt);
+
+                                                                       if(buttonVisibility ==0){
+                                                                           monBouton.setVisibility(View.GONE); // Bouton invisible
+                                                                           rt.setVisibility(View.VISIBLE); // Ratingbar visible
+                                                                           rt.setRating(voteBiere);
+                                                                       }
+                                                                       else{
+                                                                           monBouton.setVisibility(View.VISIBLE);
+                                                                           rt.setVisibility(View.GONE);
+                                                                       }
+
+                                                                       rt.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+
+                                                                           @Override
+                                                                           public void onRatingChanged(RatingBar rt, float rating,
+                                                                                                       boolean fromUser) {
+                                                                               Log.i("AA",""+FicheBiere.biereDAO.toString());
+
+                                                                               FicheBiere.biereDAO.setVote(idBiere,(int) rt.getRating());
+                                                                           }
+                                                                       });
 
                                                                    }
                                                                }); // fin runOnUiThread
@@ -108,25 +145,12 @@ public class FicheBiere  extends AppCompatActivity {
     }
 
     public void clickButtonBue(View v){
-//
-//        Intent i1 = new Intent(v.getContext(), FicheBiereBue.class);
-//        final TextView tv1 = (TextView) findViewById(R.id.NomDeLaBiere);
-//        i1.putExtra(Non_BIEREpb, tv1.getText());
-//        final TextView tv2 = (TextView) findViewById(R.id.CouleurDeLaBiere);
-//        i1.putExtra(Non_COULEURpb, tv2.getText());
-//        final TextView tv3 = (TextView) findViewById(R.id.FermentationDeLaBiere);
-//        i1.putExtra(Non_FERMENTATIONpb, tv3.getText());
-//        final TextView tv4 = (TextView) findViewById(R.id.DegreDeLaBiere);
-//        i1.putExtra(Non_DEGREpb, tv4.getText());
-//        final TextView tv5 = (TextView) findViewById(R.id.TypeDeLaBiere);
-//        i1.putExtra(Non_TYPEpb, tv5.getText());
-//        final TextView tv6 = (TextView) findViewById(R.id.BrasserieDeLaBiere);
-//        i1.putExtra(Non_BRASSERIEpb, tv6.getText());
-//        TextView tv7 = (TextView) findViewById(R.id.IdDeLaBiere);
-//        String idString=tv7.getText().toString();
-//        Toast.makeText(v.getContext(), idString, Toast.LENGTH_SHORT).show();
-//        i1.putExtra(Non_IDpb, idString);
-//        startActivityForResult(i1, 6);
 
+        Toast.makeText(FicheBiere.this,"Et hop ! Une bière de plus",Toast.LENGTH_SHORT).show();
+        /* On ajoute la bière dans la base de données locale */
+        biereDAO.ajouterNouvelleBiere(idBiere);
+        finish();
+        startActivity(getIntent());
     }
+
 }

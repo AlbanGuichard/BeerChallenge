@@ -23,7 +23,6 @@
         <activity android:name=".ToutesLesBieres" />
         <activity android:name=".Selection" />
         <activity android:name=".FicheBiere" />
-        <activity android:name=".FicheBiereBue"></activity>
         <activity android:name=".BieresConsommees"></activity>
     </application>
 
