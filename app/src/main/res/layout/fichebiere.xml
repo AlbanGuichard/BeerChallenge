@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ensai.beerchallenge.Selection">
+
+
+    <TextView
+        android:text="NomDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:id="@+id/NomDeLaBiere"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="CouleurDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CouleurDeLaBiere"
+        android:layout_below="@+id/NomDeLaBiere"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:text="FermentationDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:id="@+id/FermentationDeLaBiere"
+        android:layout_below="@+id/CouleurDeLaBiere"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="DegreDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/DegreDeLaBiere"
+        android:layout_below="@+id/FermentationDeLaBiere"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TypeDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/TypeDeLaBiere"
+        android:layout_below="@+id/DegreDeLaBiere"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="BrasserieDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/BrasserieDeLaBiere"
+        android:layout_below="@+id/TypeDeLaBiere"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="IdDeLaBiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/IdDeLaBiere"
+        android:layout_below="@+id/BrasserieDeLaBiere"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/BierePasBue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:id="@+id/buttonBue"
+        android:layout_below="@+id/IdDeLaBiere"
+        android:layout_alignParentStart="true"
+        android:onClick="clickButtonBue"/>
+
+    <!--<Spinner-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:entries="@array/notes"-->
+        <!--android:id="@+id/spinnerNote"-->
+        <!--android:layout_below="@+id/BierePasBue"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:hint="Note" />-->
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/beers"
+        android:hint="Nom de la bière" />
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/couleurs"
+        android:id="@+id/spinnerCouleur"
+        android:hint="Couleur" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/fermentation"
+        android:id="@+id/spinnerFermentation"
+        android:hint="Fermentation" />
+
+    <Button
+        android:text="@string/buttonLancerRequete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/buttonSelect"
+        android:onClick="clickButtonSelect"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Les bières en stock"/>
+
+
+    <!--android:layout_below="@+id/seekBar"-->
+
+
+<!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:ems="10"-->
+        <!--android:id="@+id/editText"-->
+        <!--android:hint="Brasserie" />-->
+
+
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="%vol"/>-->
+
+    <!--<SeekBar
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="12"
+        android:progress="6"
+        android:id="@+id/seekBar"
+        />-->
+
+    <!--<Button-->
+        <!--android:text="@string/buttonLancerRequete"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/seekBar"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="100dp"-->
+        <!--android:id="@+id/buttonLancerRequete"-->
+        <!--android:onClick="lancerRecherche"/>-->
+
+</LinearLayout>
