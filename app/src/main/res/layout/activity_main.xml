@@ -111,14 +111,13 @@
                 android:layout_height="75dip"/>
 
             <Button
-                android:text="Quitter"
+                android:text="Rechercher un bar"
                 android:textStyle="bold"
-
-
-                android:id="@+id/buttonQuitter2"
+                android:id="@+id/buttonRechercheBar"
                 android:backgroundTint="@android:color/holo_orange_light"
                 android:layout_width="175dip"
-                android:layout_height="75dip"/>
+                android:layout_height="75dip"
+                android:onClick="clickRechercherBar"/>
         </TableRow>
 
         <!--<TableRow-->

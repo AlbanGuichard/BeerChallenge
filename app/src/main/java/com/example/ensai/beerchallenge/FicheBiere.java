@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -123,6 +124,9 @@ public class FicheBiere  extends AppCompatActivity {
                                                                            monBouton.setVisibility(View.VISIBLE);
                                                                            rt.setVisibility(View.GONE);
                                                                        }
+
+                                                                       ImageButton imageButton =(ImageButton) findViewById(R.id.imagebutton);
+
 
                                                                        rt.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
 

@@ -118,5 +118,5 @@ public class BieresConsommees extends Activity {
             );
         }
     }
-
+    
 }

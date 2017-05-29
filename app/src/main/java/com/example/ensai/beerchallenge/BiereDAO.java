@@ -37,7 +37,6 @@ public class BiereDAO {
 
     public void setVote(int id_biere, int note){
         hm.put(id_biere,note);
-        Log.i("AA","Je suis passé par là :)");
         db.execSQL("UPDATE biere SET note =(?) WHERE idbiere=(?)", new String [] {String.valueOf(note),String.valueOf(id_biere)});
     }
 
