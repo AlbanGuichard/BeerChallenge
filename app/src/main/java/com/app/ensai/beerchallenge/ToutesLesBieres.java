@@ -1,8 +1,7 @@
-package com.example.ensai.beerchallenge;
+package com.app.ensai.beerchallenge;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 

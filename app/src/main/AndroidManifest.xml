@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ensai.beerchallenge">
+    package="com.app.ensai.beerchallenge">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".MyApplication"
+        android:name="com.app.ensai.beerchallenge.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.app.ensai.beerchallenge.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".RechercheFormulaire"
+            android:name="com.app.ensai.beerchallenge.RechercheFormulaire"
             android:label="Recherche" />
-        <activity android:name=".ToutesLesBieres" />
-        <activity android:name=".Selection" />
-        <activity android:name=".FicheBiere" />
-        <activity android:name=".BieresConsommees"></activity>
+        <activity android:name="com.app.ensai.beerchallenge.ToutesLesBieres" />
+        <activity android:name="com.app.ensai.beerchallenge.Selection" />
+        <activity android:name="com.app.ensai.beerchallenge.FicheBiere" />
+        <activity android:name="com.app.ensai.beerchallenge.BieresConsommees"></activity>
     </application>
 
 </manifest>

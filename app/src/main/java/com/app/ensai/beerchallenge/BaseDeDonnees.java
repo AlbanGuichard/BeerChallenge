@@ -1,4 +1,4 @@
-package com.example.ensai.beerchallenge;
+package com.app.ensai.beerchallenge;
 
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BaseDeDonnees extends SQLiteOpenHelper {
 
 
-        private static int VERSION = 4 ;
+        private static int VERSION = 1 ;
         private static final String NAME = "BeerChallenge" ;
 
         public BaseDeDonnees(Context context) {
@@ -34,27 +34,10 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL("CREATE TABLE biere (idbiere INTEGER, note INTEGER)");
-            db.execSQL("INSERT INTO  biere (idbiere,note) values (1,5)");
-            db.execSQL("INSERT INTO  biere (idbiere,note) values (2,5)");
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-            if(oldVersion==1){
-                db.execSQL("INSERT INTO  biere (idbiere,note) values (3,2)");
-                db.execSQL("INSERT INTO  biere (idbiere,note) values (4,1)");
-                VERSION = 2;
-            }
-
-            if(oldVersion==3){
-                db.execSQL("DELETE FROM biere");
-                db.execSQL("INSERT INTO  biere (idbiere,note) values (3,2)");
-                db.execSQL("INSERT INTO  biere (idbiere,note) values (4,1)");
-                VERSION = 4;
-
-            }
-
 
 
 

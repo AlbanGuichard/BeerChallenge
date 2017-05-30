@@ -1,4 +1,4 @@
-package com.example.ensai.beerchallenge;
+package com.app.ensai.beerchallenge;
 
 import android.app.Application;
 

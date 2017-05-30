@@ -1,12 +1,4 @@
-package com.example.ensai.beerchallenge;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
+package com.app.ensai.beerchallenge;
 
 /**
  * Created by ensai on 23/05/17.

@@ -5,7 +5,7 @@
     <string name="buttonChallenge">Consulter mes challenges</string>
     <string name="buttonToutesLesBieres">Consulter la liste des bières</string>
     <string name="buttonCatalogueBieres">Consulter les bières consommées</string>
-    <string name="BierePasBue">Bière à boire</string>
+    <string name="BierePasBue">Bu !</string>
     <!--<string name="adresseRequete">alban.guichard.free.fr//BeerChallenge/rechercheBiere.php?</string>-->
     <string-array name="couleurs">
         <item></item>

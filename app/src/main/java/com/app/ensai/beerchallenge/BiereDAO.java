@@ -1,11 +1,9 @@
-package com.example.ensai.beerchallenge;
+package com.app.ensai.beerchallenge;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
