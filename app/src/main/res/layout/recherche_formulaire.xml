@@ -3,78 +3,78 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:text="Recherchez votre bière dans notre catalogue et découvrez-la plus en détail : type de fermentation, couleur, degré d'alcool, ..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="15sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:lineSpacingExtra="10sp" />
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="2dp"
+        android:id="@+id/toolbar2"
+        android:elevation="0dp"
+        android:layout_marginTop="4dp"/>
+
     <EditText
         android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/beers"
-        android:hint="Nom de la bière" />
+        android:hint="Nom de la bière"
+        android:textSize="18sp" />
 
+
+    <TextView
+        android:text="Couleur de la bière"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/textView"
+        android:textSize="18sp" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/couleurs"
         android:id="@+id/spinnerCouleur"
+        android:layout_marginTop="15dp"
         android:hint="Couleur" />
+
+    <TextView
+        android:text="Type de fermentation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/textView2"
+        android:textSize="18sp" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/fermentation"
         android:id="@+id/spinnerFermentation"
-        android:hint="Fermentation" />
+        android:hint="Fermentation"
+        android:layout_marginTop="15dp"/>
 
     <Button
         android:text="@string/buttonLancerRequete"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/buttonSelect"
-        android:onClick="clickButtonSelect"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Les bières en stock"/>
-
-
-    <!--android:layout_below="@+id/seekBar"-->
-
-
-<!--<EditText-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:inputType="textPersonName"-->
-        <!--android:ems="10"-->
-        <!--android:id="@+id/editText"-->
-        <!--android:hint="Brasserie" />-->
-
-
-    <!--<TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="%vol"/>-->
-
-    <!--<SeekBar
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="12"
-        android:progress="6"
-        android:id="@+id/seekBar"
-        />-->
-
-    <!--<Button-->
-        <!--android:text="@string/buttonLancerRequete"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/seekBar"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="100dp"-->
-        <!--android:id="@+id/buttonLancerRequete"-->
-        <!--android:onClick="lancerRecherche"/>-->
+        android:onClick="clickButtonSelect"
+        android:textSize="18sp"
+        android:elevation="0dp" />
 
 </LinearLayout>

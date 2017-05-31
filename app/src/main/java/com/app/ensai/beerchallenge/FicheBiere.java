@@ -1,5 +1,6 @@
 package com.app.ensai.beerchallenge;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +35,7 @@ public class FicheBiere  extends AppCompatActivity {
     public static int voteBiere ;
     private static Map<Integer, Integer> hmBieresConsommees;
     public static BiereDAO biereDAO ;
+    public static ChallengeDAO challengeDAO ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,8 @@ public class FicheBiere  extends AppCompatActivity {
 
         /* On regarde si la bière est dans la base de données locale : ie elle a déjà été consommée */
         biereDAO = new BiereDAO(FicheBiere.this);
+        challengeDAO = new ChallengeDAO(FicheBiere.this);
+
         hmBieresConsommees = biereDAO.getBiereConsommees();
 
         // 0 = déjà bu la bière 1 = n' pas encore bu la bière
@@ -125,7 +130,7 @@ public class FicheBiere  extends AppCompatActivity {
                                                                            rt.setVisibility(View.GONE);
                                                                        }
 
-                                                                       ImageButton imageButton =(ImageButton) findViewById(R.id.imagebutton);
+                                                                      // ImageView logoBC = (ImageView) findViewById(R.id.logoBC);
 
 
                                                                        rt.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -136,6 +141,7 @@ public class FicheBiere  extends AppCompatActivity {
                                                                                Log.i("AA",""+FicheBiere.biereDAO.toString());
 
                                                                                FicheBiere.biereDAO.setVote(idBiere,(int) rt.getRating());
+                                                                               biere.setNote((int) rt.getRating());
                                                                            }
                                                                        });
 
@@ -153,8 +159,62 @@ public class FicheBiere  extends AppCompatActivity {
         Toast.makeText(FicheBiere.this,"Et hop ! Une bière de plus",Toast.LENGTH_SHORT).show();
         /* On ajoute la bière dans la base de données locale */
         biereDAO.ajouterNouvelleBiere(idBiere);
+
+        if (biere.getCouleur().equals("Ambrée")) {
+            challengeDAO.setCompteur("ambree");
+        }
+        else if (biere.getCouleur().equals("Ambrée trouble")){
+            challengeDAO.setCompteur("ambree");
+        }
+        else if (biere.getCouleur().equals("Blanche")){
+            challengeDAO.setCompteur("blanche");
+        }
+        else if (biere.getCouleur().equals("Blanche trouble")){
+            challengeDAO.setCompteur("blanche");
+        }
+        else if (biere.getCouleur().equals("Blonde")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Blonde dorée")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Blonde orangée")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Blonde pâle")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Blonde trouble")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Brune")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Brune claire")){
+            challengeDAO.setCompteur("brune");
+        }
+        else if (biere.getCouleur().equals("Brune rouge")){
+            challengeDAO.setCompteur("blonde");
+        }
+        else if (biere.getCouleur().equals("Brune soutenue")){
+            challengeDAO.setCompteur("blonde");
+        }
+
+
+        if (biere.getFermentation().equals("Double")) {
+            challengeDAO.setCompteur("double");
+        }
+        else if (biere.getFermentation().equals("Triple")){
+            challengeDAO.setCompteur("triple");
+        }
+
+        challengeDAO.setCompteur("total");
+
+        //startActivity(getIntent());
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("noteNouvelle",""+biere.getNote());
+        setResult(Activity.RESULT_OK, returnIntent);
         finish();
-        startActivity(getIntent());
     }
 
 }

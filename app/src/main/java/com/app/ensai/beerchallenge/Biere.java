@@ -13,8 +13,9 @@ public class Biere {
     private Double degre_alcool ;
     private String couleur ;
     private String type ;
+    private int note ;
 
-    public Biere(int id, String nom, String brasserie, String fermentation, Double degre_alcool, String couleur, String type) {
+    public Biere(int id, String nom, String brasserie, String fermentation, Double degre_alcool, String couleur, String type, int note) {
         this.id = id;
         this.nom = nom;
         this.brasserie = brasserie;
@@ -22,6 +23,7 @@ public class Biere {
         this.degre_alcool = degre_alcool;
         this.couleur = couleur;
         this.type = type;
+        this.note = note ;
     }
 
 
@@ -83,5 +85,14 @@ public class Biere {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+
+    public int getNote() {
+        return note;
+    }
+
+    public void setNote(int note) {
+        this.note = note;
     }
 }

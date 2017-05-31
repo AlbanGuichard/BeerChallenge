@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BaseDeDonnees extends SQLiteOpenHelper {
 
 
-        private static int VERSION = 1 ;
+        private static int VERSION = 10 ;
         private static final String NAME = "BeerChallenge" ;
 
         public BaseDeDonnees(Context context) {
@@ -34,11 +34,20 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL("CREATE TABLE biere (idbiere INTEGER, note INTEGER)");
+            db.execSQL("CREATE TABLE challenge (ch VARCHAR(100), compteur INTEGER)");
+            db.execSQL("INSERT INTO challenge (ch,compteur) VALUES ('ambree',0),('blanche',0),('blonde',0),('brune',0),('double',0),('triple',0),('total',0)");
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+            if(oldVersion<10){
+                db.execSQL("DROP TABLE challeng");
+                db.execSQL("CREATE TABLE biere (idbiere INTEGER, note INTEGER)");
+                db.execSQL("CREATE TABLE challenge (ch VARCHAR(100), compteur INTEGER)");
+                db.execSQL("INSERT INTO challenge (ch,compteur) VALUES ('ambree',0),('blanche',0),('blonde',0),('brune',0),('double',0),('triple',0),('total',0)");
+                VERSION=10;
+            }
 
 
         }

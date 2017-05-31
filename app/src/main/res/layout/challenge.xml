@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:text="@string/titrePartieTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTotal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challenge1"
+            android:id="@+id/imgUneBiere"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/uneBiere"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textUneBiere"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challenge5"
+            android:id="@+id/imgCinqBiere"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/cinqBiere"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textcINQBiere"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challenge10"
+            android:id="@+id/imgDixBiere"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/dixBiere"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textDixBiere"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challenge20"
+            android:id="@+id/imgVingtBiere"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/vingtBiere"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textVingtBiere"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challenge50"
+            android:id="@+id/imgCinquanteBiere"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/cinquanteBiere"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textCinquanteBiere"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challenge100"
+            android:id="@+id/imgCentBiere"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/centBiere"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textCentBiere"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/titrePartieCouleur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewCouleur"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challengeambree"
+            android:id="@+id/imgBiereAmbree"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/biereambree"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textBiereAmbee"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challengeblanche"
+            android:id="@+id/imgBiereBlanche"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/biereblanche"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textBiereBlanche"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challengeblonde"
+            android:id="@+id/imgBiereBlonde"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/biereblonde"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textBiereBlonde"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challengebrune"
+            android:id="@+id/imgBiereBrune"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/bierebrune"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textBiereBrune"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/titrePartieFermentation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewFermentation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/challengedouble"
+            android:id="@+id/imgBiereDouble"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:text="@string/bieredouble"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textBiereDouble"
+            android:layout_weight="1" />
+    </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:layout_marginTop="25dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/challengetriple"
+                android:id="@+id/imgBiereTriple"
+                android:adjustViewBounds="true" />
+
+            <TextView
+                android:text="@string/bieretriple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textBiereTriple"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+
+
+</LinearLayout>
+    </ScrollView>
+
+
+

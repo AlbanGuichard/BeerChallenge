@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,132 +9,102 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.app.ensai.beerchallenge.MainActivity">
+    tools:context="com.app.ensai.beerchallenge.MainActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <TableLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="65dp"
+        android:weightSum="1"
+        android:layout_weight="0.63">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
+            app:srcCompat="@drawable/logobeerchallenge"
+            android:id="@+id/imageView"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="Partir à la découverte de la bière"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_weight="0.06"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:text="@string/buttonCatalogueBieres"
+        android:id="@+id/ButtonBieresConsommees"
+        android:onClick="clickButtonCatalogue"
+        android:layout_alignBaseline="@+id/buttonChallenge"
+        android:layout_alignBottom="@+id/buttonChallenge"
+        android:layout_alignStart="@+id/buttonRecherche"
+        android:lineSpacingExtra="10sp"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_purple" />
+
+    <Button
+        android:text="@string/buttonChallenge"
+        android:lineSpacingExtra="10sp"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonChallenge"
+        android:textAlignment="center"
+        android:onClick="clickButtonChallenge"
+        android:layout_alignBaseline="@+id/ButtonBieresConsommees"
+        android:layout_alignBottom="@+id/ButtonBieresConsommees"
+        android:layout_width="match_parent"
+        android:backgroundTint="@android:color/holo_blue_dark" />
+
+    <Button
+        android:text="@string/buttonRecherche"
+        android:textAllCaps="false"
+        android:lineSpacingExtra="10sp"
+        android:textSize="18sp"
+        android:id="@+id/buttonRecherche"
+        android:onClick="clickButtonRecherche"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="Rechercher un bar"
+        android:textAllCaps="false"
+        android:lineSpacingExtra="10sp"
+        android:textSize="18sp"
+        android:id="@+id/buttonRechercheBar"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickRechercherBar" />
+
+    <Button
+        android:text="Crédit"
+        android:textAllCaps="false"
+        android:lineSpacingExtra="10sp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonToutesLesBieres"
+        android:onClick="clickButtonCredit"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp">
+        android:layout_alignParentStart="true"
+        android:backgroundTint="@android:color/holo_red_dark" />
 
-        <TableRow
-            android:layout_width="300dip"
-            android:layout_height="100dip" >
-
-            <TextView
-                android:text=" BEER"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/activity_horizontal_margin"
-                android:layout_width="150dip"
-                android:layout_height="50dip"
-                android:id="@+id/t"
-                android:layout_alignStart="@+id/buttonRecherche" /> <!--android:layout_alignBaseline="@+id/buttonChallenge"-->
-            <!--android:layout_alignBottom="@+id/buttonChallenge"-->
-
-            <TextView
-                android:text="Challenge"
-                android:textStyle="bold"
-                android:layout_width="150dip"
-                android:layout_height="50dip"
-                android:id="@+id/t2"
-                android:layout_alignStart="@+id/buttonRecherche" /> <!--android:layout_alignBaseline="@+id/buttonChallenge"-->
-            <!--android:layout_alignBottom="@+id/buttonChallenge"-->
-        </TableRow>
-
-        <TableRow
-            android:layout_width="400dip"
-            android:layout_height="400dip" >
-
-            <Button
-                android:text="@string/buttonCatalogueBieres"
-                android:layout_width="175dip"
-                android:layout_height="175dip"
-                android:id="@+id/ButtonBieresConsommees"
-                android:onClick="clickButtonCatalogue"
-                android:layout_alignBaseline="@+id/buttonChallenge" android:layout_alignBottom="@+id/buttonChallenge"
-                android:layout_alignStart="@+id/buttonRecherche" />
-            <Button
-                android:text="@string/buttonChallenge"
-                android:layout_width="175dip"
-                android:layout_height="175dip"
-                android:id="@+id/buttonChallenge"
-                android:layout_alignBaseline="@+id/ButtonBieresConsommees"
-                android:layout_alignBottom="@+id/ButtonBieresConsommees"/>
-            <!--android:layout_alignParentTop="true"-->
-            <!--android:layout_alignParentStart="true"-->
-            <!--android:layout_marginTop="27dp"-->
-        </TableRow>
-
-        <TableRow
-            android:layout_width="400dip"
-            android:layout_height="400dip" >
-
-            <Button
-                android:text="@string/buttonRecherche"
-                android:textStyle="bold"
-
-
-                android:id="@+id/buttonRecherche"
-                android:onClick="clickButtonRecherche"
-                android:backgroundTint="@android:color/holo_orange_light"
-                android:layout_width="175dip"
-                android:layout_height="175dip"/>
-            <!--android:layout_x="120px"-->
-            <!--android:layout_y="120px"-->
-            <Button
-                android:text="@string/buttonToutesLesBieres"
-                android:layout_width="175dip"
-                android:layout_height="175dip"
-                android:id="@+id/buttonToutesLesBieres"
-                android:onClick="clickButtonToutesLesBieres"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@drawable/capsule.jpg"-->
-        </TableRow>
-
-        <TableRow
-            android:layout_width="400dip"
-            android:layout_height="400dip" >
-
-            <Button
-                android:text="Contact"
-                android:textStyle="bold"
-
-
-                android:id="@+id/buttonContact"
-                android:backgroundTint="@android:color/white"
-                android:layout_width="175dip"
-                android:layout_height="75dip"/>
-
-            <Button
-                android:text="Rechercher un bar"
-                android:textStyle="bold"
-                android:id="@+id/buttonRechercheBar"
-                android:backgroundTint="@android:color/holo_orange_light"
-                android:layout_width="175dip"
-                android:layout_height="75dip"
-                android:onClick="clickRechercherBar"/>
-        </TableRow>
-
-        <!--<TableRow-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" >-->
-
-        <!---->
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" >-->
-
-        <!---->
-        <!--</TableRow>-->
-    </TableLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

@@ -4,31 +4,21 @@
     android:layout_height="match_parent">
 
 
-    <TableLayout
+    <TextView
+        android:text="La liste des bières consommées est vide"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp">
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textSize="24sp"
+        android:textAlignment="center" />
 
-        <TableRow
-            android:layout_width="400dip"
-            android:layout_height="100dip" >
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
 
-            <ListView
-                android:layout_width="275dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/listeBieresConsommees" />
-            <!--android:layout_alignBaseline="@+id/buttonChallenge"-->
-            <!--android:layout_alignBottom="@+id/buttonChallenge"-->
-
-            <ListView
-                android:layout_width="100dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/listeBieresConsommees2" />
-        </TableRow>
-
-    </TableLayout>
-
+        android:id="@+id/listeBieresConsommees" />
+    <!--android:layout_alignBaseline="@+id/buttonChallenge"-->
+    <!--android:layout_alignBottom="@+id/buttonChallenge"-->
 
 </LinearLayout>

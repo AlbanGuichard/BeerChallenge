@@ -4,8 +4,20 @@
     <string name="buttonLancerRequete">Rechercher</string>
     <string name="buttonChallenge">Consulter mes challenges</string>
     <string name="buttonToutesLesBieres">Consulter la liste des bières</string>
-    <string name="buttonCatalogueBieres">Consulter les bières consommées</string>
+    <string name="buttonCatalogueBieres">Consulter mes bières consommées</string>
     <string name="BierePasBue">Bu !</string>
+    <string name="uneBiere">Enregistrer une bière dans le catalogue</string>
+    <string name="cinqBiere">Enregistrer cinq bières dans le catalogue</string>
+    <string name="dixBiere">Enregistrer dix bières dans le catalogue</string>
+    <string name="vingtBiere">Enregistrer vingt bières dans le catalogue</string>
+    <string name="cinquanteBiere">Enregistrer cinquante bières dans le catalogue</string>
+    <string name="centBiere">Enregistrer cent bières dans le catalogue</string>
+    <string name="biereambree">Enregistrer cinq bières ambrées dans le catalogue</string>
+    <string name="biereblonde">Enregistrer cinq bières blonde dans le catalogue</string>
+    <string name="bierebrune">Enregistrer cinq bières brune dans le catalogue</string>
+    <string name="biereblanche">Enregistrer cinq bières blanche dans le catalogue</string>
+    <string name="bieredouble">Enregistrer cinq bières à fermanetation double dans le catalogue</string>
+    <string name="bieretriple">Enregistrer cinq bières à fermentation triple dans le catalogue</string>
     <!--<string name="adresseRequete">alban.guichard.free.fr//BeerChallenge/rechercheBiere.php?</string>-->
     <string-array name="couleurs">
         <item></item>
@@ -36,6 +48,8 @@
         <item>5</item>
     </string-array>
     <string name="titleRechercheFormulaire">XXX</string>
-
+    <string name="titrePartieTotal">Challenges sur le nombre de bières</string>
+    <string name="titrePartieCouleur">Challenge sur la couleur des bières</string>
+    <string name="titrePartieFermentation">Challenge sur la fermentation des bières</string>
 
 </resources>
